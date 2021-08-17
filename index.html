@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+    <title>Quiz Project</title>
+</head>
+
+<body>
+    <!--Name and Surname input form-->
+    <div class="nes-container is-rounded" id="startArea">
+        <!--Quiz Start Form-->
+        <form name="start">
+        <div class="nes-field is-inline">
+            <label for="FirstName">First Name</label>
+            <input type="text" name="firstName" id="FirstName" class="nes-input is-warning" placeholder="...">
+        </div>
+        <br>
+        <div class="nes-field is-inline">
+            <label for="LastName">Last Name</label>
+            <input type="text" name="lastName" id="LastName" class="nes-input is-warning" placeholder="...">
+        </div>
+        <button type="button" class="nes-btn is-success" id="easyBtn">Easy</button>
+        <button type="button" class="nes-btn is-warning" id="mediumBtn">Medium</button>
+        <button type="button" class="nes-btn is-error" id="hardBtn">Hard</button>
+
+        </form>
+    </div>
+
+
+    <!--Easy, Medium and Hard quiz containers -->
+
+    <!--Easy-->
+    <div class="nes-container with-title easyQuizContainer"  hidden>
+        <h1 class="easyUserName">Question</h1>
+        <span id= "easyQuizTimer"></span>
+        <h2 id="easyQuestionNumber"></h2>
+        <progress class="nes-progress is-warning easyProgress" value="20" max="100"></progress>
+
+        <p id="easyQuestionText" value=''>Question 1</p>
+
+        <form name="quiz">
+            <div class="answerInputs">
+                <label>
+                    <input type="radio" class="nes-radio" name="answer" value='0' />
+                    <span id="easyFirstAnswer">First Answer</span>
+                </label>
+                <br>
+                <label>
+                    <input type="radio" class="nes-radio" name="answer" value='1' />
+                    <span id="easySecondAnswer">Second Answer</span>
+                </label>
+                <br>
+                <label>
+                    <input type="radio" class="nes-radio" name="answer" value='2' />
+                    <span id="easyThirdAnswer">Third Answer</span>
+                </label>
+                <br>
+                <label>
+                    <input type="radio" class="nes-radio" name="answer" value='3' />
+                    <span id="easyFourthAnswer">Fourth Answer</span>
+                </label>
+                <br>
+            </div>
+        </form>
+        <button type="button" class="nes-btn is-warning" id="easyNextBtn">Next Question</button>
+    </div>
+
+<!--Medium-->
+    <div class="nes-container with-title mediumQuizContainer" hidden>
+        <h1 class="mediumUserName">Question</h1>
+        <span id= "mediumQuizTimer"></span>
+        <h2 id="mediumQuestionNumber"></h2>
+        <progress class="nes-progress is-warning mediumProgress" value="12.5" max="100"></progress>
+
+        <p id="mediumQuestionText" value=''>Question 1</p>
+
+        <form name="quiz">
+            <div class="answerInputs">
+                <label>
+                    <input type="radio" class="nes-radio" name="answer" value='0' />
+                    <span id="mediumFirstAnswer">First Answer</span>
+                </label>
+                <br>
+                <label>
+                    <input type="radio" class="nes-radio" name="answer" value='1' />
+                    <span id="mediumSecondAnswer">Second Answer</span>
+                </label>
+                <br>
+                <label>
+                    <input type="radio" class="nes-radio" name="answer" value='2' />
+                    <span id="mediumThirdAnswer">Third Answer</span>
+                </label>
+                <br>
+                <label>
+                    <input type="radio" class="nes-radio" name="answer" value='3' />
+                    <span id="mediumFourthAnswer">Fourth Answer</span>
+                </label>
+                <br>
+            </div>
+        </form>
+        <button type="button" class="nes-btn is-warning" id="mediumNextBtn">Next Question</button>
+    </div>
+
+    <!--Hard-->
+    <div class="nes-container with-title hardQuizContainer" hidden>
+        <h1 class="hardUserName">Question</h1>
+        <span id= "hardQuizTimer"></span>
+        <h2 id="hardQuestionNumber"></h2>
+        <progress class="nes-progress is-warning hardProgress" value="10" max="100"></progress>
+
+        <p id="hardQuestionText" value=''>Question 1</p>
+
+        <form id="quiz" name="quiz">
+            <div class="answerInputs">
+                <label>
+                    <input type="radio" class="nes-radio" name="answer" value='0' />
+                    <span id="hardFirstAnswer">First Answer</span>
+                </label>
+                <br>
+                <label>
+                    <input type="radio" class="nes-radio" name="answer" value='1' />
+                    <span id="hardSecondAnswer">Second Answer</span>
+                </label>
+                <br>
+                <label>
+                    <input type="radio" class="nes-radio" name="answer" value='2' />
+                    <span id="hardThirdAnswer">Third Answer</span>
+                </label>
+                <br>
+                <label>
+                    <input type="radio" class="nes-radio" name="answer" value='3' />
+                    <span id="hardFourthAnswer">Fourth Answer</span>
+                </label>
+                <br>
+            </div>
+        </form>
+        <button type="button" class="nes-btn is-warning" id="hardNextBtn">Next Question</button>
+    </div>
+
+
+     <!--Result Area-->
+    <div class="nes-container is-rounded" id="resultArea" hidden>
+        <h1 id="userName1"></h1>
+        <br>
+        <p id="totalScore"></p>
+        <button type="button" class="nes-btn is-primary" id="leaderBoardbtn" onclick="leaderBoard()">Leader Board</button>
+    </div>
+
+    
+    <!--Leader Board-->
+    <div class="nes-container is-rounded" id="leaderBoard" hidden>
+    <div class="nes-table" style="text-align: center; align-items: center;">
+        <table class="nes-table is-bordered">
+            <Thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Group Number</th>
+                    <th>Difficulty</th>
+                    <th>Points</th>
+                </tr>
+            </Thead>
+            <tbody>
+                <tr>
+                    <td id="User"></td>
+                    <td id="Group"></td>
+                    <td id="Difficulty"></td>
+                    <td id="Points"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button type="button" class="nes-btn is-error" id="restartBtn">Restart</button>
+    </div>
+
+</body>
+
+</html>

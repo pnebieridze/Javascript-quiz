@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');
+
+:root{
+    --main-font: 'Montserrat', sans-serif;
+    --main-font-caps: 'Mulish', sans-serif; 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--main-font);
+}
+.easyQuizContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 800px;
+    background-image: url("/Assets/Easybackground.png") ;
+}
+.mediumQuizContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 800px;
+    background-image: url("/Assets/mediumBackground.jpg") ;
+}
+.hardQuizContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 800px;
+    background-image: url("/Assets/Hardbackground.png") ;
+}
+
+#resultArea{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 100px;
+    min-width: 300px;
+    padding: 30px;
+    background-color: grey;
+}
+#startArea{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 100px;
+    min-width: 300px;
+    background-color: grey;
+}
+#easyBtn{
+    left: 10%;
+    margin-top: 20px;
+    transform: translateX(-50%);
+}
+#mediumBtn{
+    left: 30%;
+    margin-top: 20px;
+    transform: translateX(-50%);
+}
+#hardBtn{
+    left: 40%;
+    margin-top: 20px;
+    transform: translateX(-50%);
+}
+#easyQuestionText{
+    font-size: 2rem;
+    font-family: var(--main-font-caps);
+    font-weight: bold;
+}
+#mediumQuestionText{
+    font-size: 2rem;
+    font-family: var(--main-font-caps);
+    font-weight: bold;
+    
+}
+#hardQuestionText{
+    font-size: 2rem;
+    font-family: var(--main-font-caps);
+    font-weight: bold;
+}
+.answerInputs {
+    font-size: 1rem;
+    font-family: var(--main-font-caps);
+    font-weight: bold;
+}
+.title{
+    font-size: 1.4rem !important;
+}
+#leaderBoard{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 800px;
+    background-image: url("/Assets/Leaderboard.png");
+}
